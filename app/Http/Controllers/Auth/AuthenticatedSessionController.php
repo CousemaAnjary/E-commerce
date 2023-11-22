@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -25,7 +27,7 @@ class AuthenticatedSessionController extends Controller
             $request->session()->regenerate();
 
             // 5. Rediriger l'utilisateur vers la page
-            return redirect()->back();
+            return redirect()->intended(route('products.index'));
         }
 
         // 6. L'utilisateur n'a pas pu se connecter
@@ -36,7 +38,7 @@ class AuthenticatedSessionController extends Controller
             ->onlyInput('email');
     }
 
-    public function logout()
+    public function destroy()
     {
         Auth::logout();
         return redirect()->route('login.create')->with('success', 'Deconnexion reussie');

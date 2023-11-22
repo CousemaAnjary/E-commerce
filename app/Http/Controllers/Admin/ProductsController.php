@@ -20,7 +20,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view(_BACK_URL_ . 'products.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class ProductsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view(_BACK_URL_ . 'products.edit');
     }
 
     /**
