@@ -1,9 +1,9 @@
 @php
     $label = $label ?? 'Default';
     $type = $type ?? 'text';
-    $class = $class ?? '';
     $name = $name ?? '';
     $value = $value ?? '';
+    $class = $class ?? '';
 @endphp
 
 <div @class(['form-group', $class])>
@@ -15,7 +15,7 @@
            type="{{ $type }}" 
            name="{{ $name }}" 
            id="{{ $name }}" 
-           value="{{ $value }}">
+           value="{{ $value}}">
            
     {{-- Affichage des erreurs de validation --}}
     @error($name)

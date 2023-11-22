@@ -10,3 +10,9 @@ Route::middleware('guest')->group(function () {
         Route::post('login', 'store')->name('login.store');
     });
 });
+
+Route::middleware('auth')->group(function () {
+    Route::controller(AuthenticatedSessionController::class)->group(function () {
+        Route::get('logout', 'destroy')->name('logout.destroy');
+    });
+});
