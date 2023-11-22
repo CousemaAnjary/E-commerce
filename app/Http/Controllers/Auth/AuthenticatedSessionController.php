@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class AuthenticatedSessionController extends Controller
 {
-    //
+    public function create()
+    {
+        return view(_AUTH_URL_ . 'login');
+    }
 }
