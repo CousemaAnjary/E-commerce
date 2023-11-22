@@ -11,8 +11,9 @@ Route::middleware('guest')->group(function () {
     });
 });
 
+
 Route::middleware('auth')->group(function () {
     Route::controller(AuthenticatedSessionController::class)->group(function () {
-        Route::get('logout', 'destroy')->name('logout.destroy');
+        Route::delete('logout', 'destroy')->name('logout.destroy');
     });
 });

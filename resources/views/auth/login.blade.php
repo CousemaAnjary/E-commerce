@@ -5,7 +5,7 @@
     <div class="container mt-4">
         <h1>Se connecter</h1>
 
-        <form action="{{route('login.store')}}" method="POST">
+        <form action="{{ route('login.store') }}" method="POST">
             @csrf
             @include('components.input', [
                 'label' => 'E-mail',
@@ -17,11 +17,12 @@
                 'type' => 'password',
                 'name' => 'password',
             ])
-        </form>
 
-        <div class="mt-4">
-            {!! primary_btn('Envoyer') !!}     
-        </div>
+            <div class="mt-4">
+                {!! primary_btn('Envoyer') !!}
+            </div>
+            
+        </form>
 
     </div>
 
