@@ -11,8 +11,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        require_once __DIR__ . '/../Helpers/Constants_helper.php';
-        require_once __DIR__ . '/../Helpers/Components_helper.php';
+        require_once __DIR__ . '/../Http/Helpers/Constants_helper.php';
+        require_once __DIR__ . '/../Http/Helpers/Components_helper.php';
     }
 
     /**
